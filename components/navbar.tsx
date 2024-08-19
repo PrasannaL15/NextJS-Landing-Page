@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import Image from "next/image";
 
-import logo from "@vercel.svg";
+import logo from "../public/vercel.svg";
 export const Navbar = () => {
   return (
     <nav className="fixed w-full h-24 shadow-xl bg-white z-10">
