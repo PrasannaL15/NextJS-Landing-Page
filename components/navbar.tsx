@@ -20,13 +20,15 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import Image from "next/image";
+
+import logo from "@vercel.svg";
 export const Navbar = () => {
   return (
     <nav className="fixed w-full h-24 shadow-xl bg-white z-10">
       <div className="flex justify-between items-center h-full w-full px-4">
         <div className="w-90 h-90">
           <Image
-            src="/vercel.svg"
+            src={logo}
             width={0}
             height={0}
             sizes="100vw"
