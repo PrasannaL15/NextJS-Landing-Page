@@ -17,7 +17,7 @@ const AboutUs = () => {
             us a leading name in the travel industry.
           </p>
           <p className="text-lg ">
-            Whether you're looking to unwind on a serene beach, hike through
+            Whether youre looking to unwind on a serene beach, hike through
             scenic landscapes, or explore vibrant cities, we offer tailored
             tours to meet your preferences. With years of experience, our
             dedicated team ensures that each trip is safe, seamless, and filled
@@ -33,8 +33,8 @@ const AboutUs = () => {
           </p>
           <p className="text-lg text-primary-600">
             We are more than just a travel agency; we are your partners in
-            exploring the world. Together, let's make every trip an
-            unforgettable story worth telling.
+            exploring the world. Together, lets make every trip an unforgettable
+            story worth telling.
           </p>
         </div>
       </Container>
