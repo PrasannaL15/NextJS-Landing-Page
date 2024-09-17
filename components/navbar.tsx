@@ -26,17 +26,17 @@ export const Navbar = () => {
   return (
     <nav className="fixed w-full h-24 shadow-xl bg-white z-10">
       <div className="flex justify-between items-center h-full w-full px-4">
-        <div className="flex-1">
+        <div className="w-90 h-90">
           <Image
             src={logo}
             width={0}
             height={0}
             sizes="100vw"
             alt="Logo"
-            style={{ width: "30%", height: "auto" }}
+            style={{ width: "100%", height: "auto" }}
           ></Image>
         </div>
-        <div className="hidden sm:flex flex-3">
+        <div className="hidden sm:flex">
           {" "}
           <NavigationMenu>
             <NavigationMenuList>
@@ -106,7 +106,7 @@ export const Navbar = () => {
             </NavigationMenuList>
           </NavigationMenu>
         </div> */}
-        <div className="sm:hidden cursor-pointer pl-12">
+        <div className="sm:hidden cursor-pointer pl-24">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="lg:hidden">
