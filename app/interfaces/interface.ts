@@ -7,7 +7,7 @@ export interface TravelCardProps {
 export interface MainContentProps {
   title: string;
   description: string;
-  image: imageProps;
+  images: imageProps[];
 }
 export interface FeatureProps {
   title: string;

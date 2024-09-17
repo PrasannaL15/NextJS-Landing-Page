@@ -13,8 +13,9 @@ import { Button } from "../ui/button";
 // Asset imports
 import Placeholder from "@/public/placeholder.webp";
 import { MainContentProps } from "@/app/interfaces/interface";
+import AutoCarousel from "../AutoCorousel";
 
-const MainContent = ({ title, description, image }: MainContentProps) => {
+const MainContent = ({ title, description, images }: MainContentProps) => {
   return (
     <Section>
       <Container>
@@ -36,13 +37,7 @@ const MainContent = ({ title, description, image }: MainContentProps) => {
             <Balancer>{description}</Balancer>
           </h3>
           <div className="not-prose my-8 h-96 w-full overflow-hidden rounded-lg border md:h-[480px] md:rounded-xl">
-            <Image
-              className="h-full w-full object-cover object-bottom"
-              src={image.src}
-              width={1920}
-              height={1080}
-              alt={image.alt ? image.alt : "placeholder"}
-            />
+            <AutoCarousel images={images} />
           </div>
         </div>
       </Container>

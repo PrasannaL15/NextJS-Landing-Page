@@ -17,16 +17,27 @@ import Image from "next/image";
 import TravelCard from "@/components/travel-card";
 import { TravelCardProps } from "@/app/interfaces/interface";
 import TravelCorousel from "@/components/travel-corousel/travel-corousel";
+import Footer from "@/components/footer";
 
 export default function Home() {
   const main_content = {
     title: "Main Content",
     description:
       "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: {
-      src: "https://images.unsplash.com/photo-1506057213367-028a17ec52e5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      alt: "Presets.com Example Image",
-    },
+    images: [
+      {
+        src: "https://images.unsplash.com/photo-1506057213367-028a17ec52e5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        alt: "Presets.com Example Image",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1506057213367-028a17ec52e5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        alt: "Presets.com Example Image",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1506057213367-028a17ec52e5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        alt: "Presets.com Example Image",
+      },
+    ],
   };
 
   const travel_card_arry = [
@@ -143,6 +154,7 @@ export default function Home() {
       <FeatureRight {...feature_right} />
       <TravelCorousel travelCards={travel_card_arry} />
       <FeatureCorousel {...feature_corousel} />
+      <Footer />
     </>
   );
 }
