@@ -12,13 +12,14 @@ import { Button } from "../ui/button";
 
 // Asset imports
 import Placeholder from "@/public/placeholder.webp";
+import { MainContentProps } from "@/app/interfaces/interface";
 
-const Hero = () => {
+const MainContent = ({ title, description, image }: MainContentProps) => {
   return (
     <Section>
       <Container>
         <div>
-          <Button
+          {/* <Button
             asChild
             className="mb-6 w-fit"
             size={"sm"}
@@ -27,27 +28,20 @@ const Hero = () => {
             <Link className="not-prose" href="https://9d8.dev">
               Lorem ipsum dolor sit amet <ArrowRight className="w-4" />
             </Link>
-          </Button>
+          </Button> */}
           <h1>
-            <Balancer>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
-            </Balancer>
+            <Balancer>{title}</Balancer>
           </h1>
           <h3 className="text-muted-foreground">
-            <Balancer>
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Balancer>
+            <Balancer>{description}</Balancer>
           </h3>
           <div className="not-prose my-8 h-96 w-full overflow-hidden rounded-lg border md:h-[480px] md:rounded-xl">
             <Image
               className="h-full w-full object-cover object-bottom"
-              src={Placeholder}
+              src={image.src}
               width={1920}
               height={1080}
-              alt="hero image"
-              placeholder="blur"
+              alt={image.alt ? image.alt : "placeholder"}
             />
           </div>
         </div>
@@ -56,4 +50,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default MainContent;

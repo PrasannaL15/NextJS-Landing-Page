@@ -16,7 +16,7 @@ export default function TravelCard({
       {/* Left side: Image */}
       <div className="w-1/2">
         <Image
-          src={image}
+          src={image.src}
           width={0}
           height={0}
           sizes="100vw"
