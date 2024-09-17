@@ -18,6 +18,9 @@ import TravelCard from "@/components/travel-card";
 import { TravelCardProps } from "@/app/interfaces/interface";
 import TravelCorousel from "@/components/travel-corousel/travel-corousel";
 import Footer from "@/components/footer";
+import AboutUs from "@/components/AboutUs";
+import placeHolder from "@/public/placeholder.webp";
+import TestimonialCorousel from "@/components/testimonial-corousel/testimonial-corousel";
 
 export default function Home() {
   const main_content = {
@@ -43,10 +46,10 @@ export default function Home() {
   const travel_card_arry = [
     {
       image: {
-        src: "https://source.unsplash.com/1600x900/?nature,water",
+        src: placeHolder,
         alt: "Nature Water",
       },
-      title: "LA",
+      title: "First Travel Card",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       facilities: [
@@ -144,8 +147,41 @@ export default function Home() {
     ],
   };
 
+  const testimonial_cards = [
+    {
+      name: "John Doe",
+      quote:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      img: {
+        src: "https://images.unsplash.com/photo-1521942132694-5daae96ff62d?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        alt: "John Doe",
+      },
+      role: "CEO",
+    },
+    {
+      name: "Jane Doe",
+      quote:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      img: {
+        src: "https://images.unsplash.com/photo-1521942132694-5daae96ff62d?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        alt: "Jane Doe",
+      },
+      role: "CTO",
+    },
+    {
+      name: "John Smith",
+      quote:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      img: {
+        src: "https://images.unsplash.com/photo-1521942132694-5daae96ff62d?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        alt: "John Smith",
+      },
+      role: "COO",
+    },
+  ];
+
   return (
-    <>
+    <div className="overflow-hidden">
       <div className="h-24">
         <Navbar />
       </div>
@@ -154,7 +190,10 @@ export default function Home() {
       <FeatureLeft {...feature_left} />
       <TravelCorousel travelCards={travel_card_arry} />
       <FeatureCorousel {...feature_corousel} />
+
+      <TestimonialCorousel testimonialCards={testimonial_cards} />
+      <AboutUs />
       <Footer />
-    </>
+    </div>
   );
 }

@@ -21,7 +21,7 @@ export default function TravelCard({
           height={0}
           sizes="100vw"
           alt={title}
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full aspect-[4/5]"
         ></Image>
       </div>
 

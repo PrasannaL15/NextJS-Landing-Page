@@ -19,25 +19,21 @@ const MainContent = ({ title, description, images }: MainContentProps) => {
   return (
     <Section>
       <Container>
-        <div>
-          {/* <Button
-            asChild
-            className="mb-6 w-fit"
-            size={"sm"}
-            variant={"outline"}
-          >
-            <Link className="not-prose" href="https://9d8.dev">
-              Lorem ipsum dolor sit amet <ArrowRight className="w-4" />
-            </Link>
-          </Button> */}
-          <h1>
-            <Balancer>{title}</Balancer>
-          </h1>
-          <h3 className="text-muted-foreground">
-            <Balancer>{description}</Balancer>
-          </h3>
-          <div className="not-prose my-8 h-96 w-full overflow-hidden rounded-lg border md:h-[480px] md:rounded-xl">
+        <div className="relative h-[80vh] w-full overflow-hidden rounded-lg md:rounded-xl">
+          {/* Background image */}
+          <div className="absolute inset-0">
             <AutoCarousel images={images} />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-primary opacity-50"></div>
+          </div>
+          {/* Content on top of the image */}
+          <div className="relative z-9 flex flex-col items-center justify-center h-full text-center text-popover p-4">
+            <h1>
+              <Balancer>{title}</Balancer>
+            </h1>
+            <h3 className="text-popover">
+              <Balancer>{description}</Balancer>
+            </h3>
           </div>
         </div>
       </Container>
