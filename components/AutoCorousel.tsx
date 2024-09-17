@@ -2,7 +2,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { imageProps } from "@/app/interfaces/interface";
-
+import Image from "next/image";
 const AutoCarousel = ({ images }: { images: imageProps[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -47,7 +47,7 @@ const AutoCarousel = ({ images }: { images: imageProps[] }) => {
       >
         {extendedImages.map((image, index) => (
           <div className="min-w-full h-full" key={index}>
-            <img
+            <Image
               src={image.src}
               alt={image.alt}
               className="w-full h-full object-cover"
