@@ -150,8 +150,8 @@ export default function Home() {
         <Navbar />
       </div>
       <MainContent {...main_content} />
-      <FeatureLeft {...feature_left} />
       <FeatureRight {...feature_right} />
+      <FeatureLeft {...feature_left} />
       <TravelCorousel travelCards={travel_card_arry} />
       <FeatureCorousel {...feature_corousel} />
       <Footer />

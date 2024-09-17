@@ -38,7 +38,7 @@ const AutoCarousel = ({ images }: { images: imageProps[] }) => {
   return (
     <div className="relative overflow-hidden w-full h-full">
       <div
-        className={`flex ${
+        className={`flex w-full h-full ${
           isTransitioning
             ? "transition-transform duration-1000 ease-in-out"
             : ""
