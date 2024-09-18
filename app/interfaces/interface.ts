@@ -5,6 +5,7 @@ export interface TravelCardProps {
   title: string;
   description: string;
   facilities: string[];
+  className?: string;
 }
 export interface MainContentProps {
   title: string;

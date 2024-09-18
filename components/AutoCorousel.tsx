@@ -50,6 +50,8 @@ const AutoCarousel = ({ images }: { images: imageProps[] }) => {
             <Image
               src={image.src}
               alt={image.alt}
+              height={1080}
+              width={1920}
               className="w-full h-full object-cover"
             />
           </div>

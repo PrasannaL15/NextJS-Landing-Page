@@ -21,7 +21,7 @@ export default function TravelCorousel({ travelCards }: TravelCorouselProps) {
     <Section>
       <Container>
         <Carousel
-          className="mt-6 w-full"
+          className="mt-6 w-full "
           opts={{
             align: "start",
             loop: true,
@@ -31,13 +31,14 @@ export default function TravelCorousel({ travelCards }: TravelCorouselProps) {
             {travelCards.map((card, index) => (
               <CarouselItem
                 key={index}
-                className="pl-5 md:basis-1/2 lg:basis-1/2"
+                className="pl-5  md:basis-1/2 lg:basis-1/3"
               >
                 <TravelCard
                   image={card.image}
                   title={card.title}
                   description={card.description}
                   facilities={card.facilities}
+                  className=" h-full"
                 />
               </CarouselItem>
             ))}

@@ -10,9 +10,12 @@ export default function TravelCard({
   title,
   description,
   facilities,
+  className,
 }: TravelCardProps) {
   return (
-    <div className="w-full max-w-2xl mx-auto bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden flex">
+    <div
+      className={` text-sm w-full max-w-2xl mx-auto bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden flex flex-r h-full ${className}`}
+    >
       {/* Left side: Image */}
       <div className="w-1/2">
         <Image

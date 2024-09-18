@@ -22,7 +22,16 @@ import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import Image from "next/image";
 
 import logo from "../public/vercel.svg";
-export const Navbar = () => {
+export const Navbar = ({ nav_links }: any) => {
+  const scrollToSection = (sectionRef: any) => {
+    const section = sectionRef.current;
+    const yOffset = -80;
+    const y =
+      section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   return (
     <nav className="fixed w-full h-24 shadow-xl bg-white z-10">
       <div className="flex justify-between items-center h-full w-full px-4">
@@ -41,21 +50,27 @@ export const Navbar = () => {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                {nav_links.map((link: any, index: any) => (
+                  <>
+                    <NavigationMenuLink
+                      key={index}
+                      onClick={() => scrollToSection(link.ref)}
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      {link.name}
+                    </NavigationMenuLink>
+                  </>
+                ))}
+                {/* <Link href="#Images" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Images
                   </NavigationMenuLink>
                 </Link>{" "}
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="#About" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Contact Us
+                    About Us
                   </NavigationMenuLink>
-                </Link>{" "}
-                <Link href="/docs" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    About
-                  </NavigationMenuLink>
-                </Link>
+                </Link>{" "} */}
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -118,27 +133,17 @@ export const Navbar = () => {
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem className="flex flex-col gap-2">
-                    <Link href="/docs" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={verticalNavigationMenuTriggerStyle()}
-                      >
-                        Images
-                      </NavigationMenuLink>
-                    </Link>{" "}
-                    <Link href="/docs" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={verticalNavigationMenuTriggerStyle()}
-                      >
-                        Contact Us
-                      </NavigationMenuLink>
-                    </Link>{" "}
-                    <Link href="/docs" legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={verticalNavigationMenuTriggerStyle()}
-                      >
-                        About
-                      </NavigationMenuLink>
-                    </Link>
+                    {nav_links.map((link: any, index: any) => (
+                      <>
+                        <NavigationMenuLink
+                          key={index}
+                          onClick={() => scrollToSection(link.ref)}
+                          className={navigationMenuTriggerStyle()}
+                        >
+                          {link.name}
+                        </NavigationMenuLink>
+                      </>
+                    ))}
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>

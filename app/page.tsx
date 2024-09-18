@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+
 import FeatureCorousel from "@/components/home-page/feature-corousel";
 import FeatureLeft from "@/components/home-page/feature-left";
 import FeatureRight from "@/components/home-page/feature-right";
@@ -23,6 +27,29 @@ import placeHolder from "@/public/placeholder.webp";
 import TestimonialCorousel from "@/components/testimonial-corousel/testimonial-corousel";
 
 export default function Home() {
+  const section1Ref = useRef(null);
+  const section2Ref = useRef(null);
+  const section3Ref = useRef(null);
+
+  const nav_links = [
+    {
+      name: "Tours",
+      ref: section1Ref,
+    },
+    {
+      name: "Images",
+      ref: section2Ref,
+    },
+    {
+      name: "About Us",
+      ref: section3Ref,
+    },
+  ];
+
+  const scrollToSection = (sectionRef: any) => {
+    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   const main_content = {
     title: "Main Content",
     description:
@@ -181,18 +208,28 @@ export default function Home() {
   ];
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden scroll-p-80">
       <div className="h-24">
-        <Navbar />
+        <Navbar nav_links={nav_links} />
       </div>
+
       <MainContent {...main_content} />
-      <FeatureRight {...feature_right} />
-      <FeatureLeft {...feature_left} />
-      <TravelCorousel travelCards={travel_card_arry} />
-      <FeatureCorousel {...feature_corousel} />
+
+      <div className="bg-accent">
+        <FeatureRight {...feature_right} />
+        <FeatureLeft {...feature_left} />
+      </div>
+      <div ref={section1Ref}>
+        <TravelCorousel travelCards={travel_card_arry} />
+      </div>
+      <div ref={section2Ref} className="bg-accent">
+        <FeatureCorousel {...feature_corousel} />
+      </div>
 
       <TestimonialCorousel testimonialCards={testimonial_cards} />
-      <AboutUs />
+      <div ref={section3Ref}>
+        <AboutUs />
+      </div>
       <Footer />
     </div>
   );
