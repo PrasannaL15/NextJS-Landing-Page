@@ -34,7 +34,7 @@ export const Navbar = ({ nav_links }: any) => {
 
   return (
     <nav className="fixed w-full h-24 shadow-xl bg-white z-10">
-      <div className="flex justify-between items-center h-full w-full px-4">
+      <div className="flex justify-center md:justify-between items-center h-full w-full px-4">
         <div className="w-90 h-90">
           <Image
             src={logo}
@@ -55,7 +55,7 @@ export const Navbar = ({ nav_links }: any) => {
                     <NavigationMenuLink
                       key={index}
                       onClick={() => scrollToSection(link.ref)}
-                      className={navigationMenuTriggerStyle()}
+                      className={navigationMenuTriggerStyle() + "select-none"}
                     >
                       {link.name}
                     </NavigationMenuLink>
