@@ -83,7 +83,7 @@ export const Navbar = ({ nav_links }: any) => {
                 <NavigationMenuItem key={index}>
                   <NavigationMenuLink
                     onClick={() => scrollToSection(link.ref)}
-                    className={` border border-accent-foreground transition ease-in-out duration-200 text-sm font-medium ${navigationMenuTriggerStyle()}  text-popover  bg-primary hover:bg-foreground hover:text-secondary`}
+                    className={` select-none border border-accent-foreground transition ease-in-out duration-200 text-sm font-medium ${navigationMenuTriggerStyle()}  text-popover  bg-primary hover:bg-foreground hover:text-secondary`}
                   >
                     {link.name}
                   </NavigationMenuLink>
