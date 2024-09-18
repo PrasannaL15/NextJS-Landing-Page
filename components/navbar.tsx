@@ -75,80 +75,22 @@ export const Navbar = ({ nav_links }: any) => {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        {/* <div className="sm:hidden cursor-pointer pl-24">
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>
-                  {" "}
-                  <AiOutlineMenu className="text-2xl" />
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                    <li className="row-span-3">
-                      <NavigationMenuLink asChild>
-                        <a
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                          href="/"
-                        >
-                          <Icons.logo className="h-6 w-6" />
-                          <div className="mb-2 mt-4 text-lg font-medium">
-                            shadcn/ui
-                          </div>
-                          <p className="text-sm leading-tight text-muted-foreground">
-                            Beautifully designed components built with Radix UI
-                            and Tailwind CSS.
-                          </p>
-                        </a>
-                      </NavigationMenuLink>
-                    </li>
-                    <ListItem href="/docs" title="Introduction">
-                      Re-usable components built using Radix UI and Tailwind
-                      CSS.
-                    </ListItem>
-                    <ListItem href="/docs/installation" title="Installation">
-                      How to install dependencies and structure your app.
-                    </ListItem>
-                    <ListItem
-                      href="/docs/primitives/typography"
-                      title="Typography"
-                    >
-                      Styles for headings, paragraphs, lists...etc
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+
+        <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 w-11/12 max-w-md bg-primary text-primary rounded-full shadow-lg z-50 sm:hidden">
+          <NavigationMenu className="max-w-full">
+            <NavigationMenuList className="flex justify-around py-3">
+              {nav_links.map((link: any, index: any) => (
+                <NavigationMenuItem key={index}>
+                  <NavigationMenuLink
+                    onClick={() => scrollToSection(link.ref)}
+                    className={` border border-accent-foreground transition ease-in-out duration-200 text-sm font-medium ${navigationMenuTriggerStyle()}  text-popover  bg-primary hover:bg-foreground hover:text-secondary`}
+                  >
+                    {link.name}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
             </NavigationMenuList>
           </NavigationMenu>
-        </div> */}
-        <div className="sm:hidden cursor-pointer pl-24">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="lg:hidden">
-                <MenuIcon className="h-4 w-3" />
-                <span className="sr-only">Toggle navigation menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left">
-              <NavigationMenu>
-                <NavigationMenuList>
-                  <NavigationMenuItem className="flex flex-col gap-2">
-                    {nav_links.map((link: any, index: any) => (
-                      <>
-                        <NavigationMenuLink
-                          key={index}
-                          onClick={() => scrollToSection(link.ref)}
-                          className={navigationMenuTriggerStyle()}
-                        >
-                          {link.name}
-                        </NavigationMenuLink>
-                      </>
-                    ))}
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-            </SheetContent>
-          </Sheet>
         </div>
       </div>
     </nav>
@@ -163,6 +105,7 @@ const ListItem = React.forwardRef<
     <li>
       <NavigationMenuLink asChild>
         <a
+          id="closeBTN"
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
